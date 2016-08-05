@@ -1,0 +1,27 @@
+{"name":"clncore",
+"structs":[
+    {"name":"DataConnection",
+    "table":"dataconnections", 
+    "libs":"time,github.com/eaciit/toolkit",
+    "fields":[
+        {"name":"ID", "type":"string",
+            "key":"primary", "tag":"`bson:\"_id\"`",
+            "default":""},
+        {"name":"Title"},
+        {"name":"Host"},
+        {"name":"Database"},
+        {"name":"User"},
+        {"name":"Password"},
+        {"name":"Config","type":"toolkit.M"},
+        {"name":"Created","type":"time.Time"},
+        {"name":"CreatedBy"},
+        {"name":"LastModified","type":"time.Time"},
+        {"name":"UpdatedBy"},
+        {"name":"Enable","type":"bool","default":true}
+    ],
+    "methods":[
+        {"type":"get","field":"id"},
+        {"type":"get","field":"title"},
+        {"type":"find","field":"title"}
+    ]}
+]}
