@@ -36,6 +36,7 @@
     ]
     },
     {"name":"DataModel",
+    "libs":"time",
     "fields":[
         {"name":"ID", "type":"string",
             "key":"primary", "tag":"`bson:\"_id\"`",
