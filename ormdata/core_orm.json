@@ -1,7 +1,6 @@
 {"name":"clncore",
 "structs":[
     {"name":"DataConnection",
-    "table":"dataconnections", 
     "libs":"time,github.com/eaciit/toolkit",
     "fields":[
         {"name":"ID", "type":"string",
@@ -18,6 +17,34 @@
         {"name":"LastModified","type":"time.Time"},
         {"name":"UpdatedBy"},
         {"name":"Enable","type":"bool","default":true}
+    ],
+    "methods":[
+        {"type":"get","field":"id"},
+        {"type":"get","field":"title"},
+        {"type":"find","field":"title"}
+    ]},
+    {"name":"DataField",
+    "libs":"github.com/eaciit/toolkit",
+    "fields":[
+        {"name":"ID", "type":"string",
+            "key":"primary", "tag":"`bson:\"_id\"`",
+            "default":""},
+        {"name":"Label"},
+        {"name":"FieldType"},
+        {"name":"FieldTag"},
+        {"name":"Config","type":"toolkit.M"}
+    ]
+    },
+    {"name":"DataModel",
+    "fields":[
+        {"name":"ID", "type":"string",
+            "key":"primary", "tag":"`bson:\"_id\"`",
+            "default":""},
+        {"name":"Title"},
+        {"name":"Fields","type":"map[string]*DataField"},
+        {"name":"CreatedBy"},
+        {"name":"LastModified","type":"time.Time"},
+        {"name":"UpdatedBy"}
     ],
     "methods":[
         {"type":"get","field":"id"},
