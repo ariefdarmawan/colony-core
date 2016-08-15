@@ -1,10 +1,11 @@
 package clncore
 
 import (
+	"time"
+
 	"github.com/eaciit/dbox"
 	"github.com/eaciit/orm"
 	"github.com/eaciit/toolkit"
-	"time"
 )
 
 type DataConnection struct {
@@ -64,5 +65,5 @@ func DataConnectionGetByTitle(pTitle string, orders string) (*DataConnection, er
 }
 
 func DataConnectionFindByTitle(pTitle string, fields string, limit, skip int) dbox.ICursor {
-	return DataConnectionFind(dbox.Eq("title", pTitle), orders, "", limit, skip)
+	return DataConnectionFind(dbox.Eq("title", pTitle), "", "", limit, skip)
 }

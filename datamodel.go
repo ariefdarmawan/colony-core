@@ -57,5 +57,5 @@ func DataModelGetByTitle(pTitle string, orders string) (*DataModel, error) {
 }
 
 func DataModelFindByTitle(pTitle string, fields string, limit, skip int) dbox.ICursor {
-	return DataModelFind(dbox.Eq("title", pTitle), orders, "", limit, skip)
+	return DataModelFind(dbox.Eq("title", pTitle), "", "", limit, skip)
 }
