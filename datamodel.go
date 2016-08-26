@@ -22,6 +22,7 @@ func (o *DataModel) TableName() string {
 }
 func NewDataModel() *DataModel {
 	o := new(DataModel)
+	o.Fields = map[string]*DataField{}
 	return o
 }
 func DataModelFind(filter *dbox.Filter, fields, orders string, limit, skip int) dbox.ICursor {
