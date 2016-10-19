@@ -7,12 +7,21 @@ import (
 )
 
 type DataField struct {
-	orm.ModelBase `bson:"-" json:"-"`
-	ID            string `bson:"_id"`
-	Label         string
-	FieldType     string
-	FieldTag      string
-	Config        toolkit.M
+	orm.ModelBase   `bson:"-" json:"-"`
+	ID              string `bson:"_id"`
+	Label           string
+	FieldType       string
+	GridShow        bool
+	GridColumn      int
+	GridWidth       int
+	GridFormat      string
+	GridUseTemplate bool
+	GridTemplate    string
+	GridAlign       string
+	DatabaseFieldID string
+	MappingFields   []string
+	FieldTag        string
+	Config          toolkit.M
 }
 
 func (o *DataField) TableName() string {
